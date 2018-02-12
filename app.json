@@ -1,0 +1,8 @@
+{
+  "name": "Django Paynow Example",
+  "description": "A barebones Python app, which can easily be deployed to Heroku.",
+  "image": "heroku/python",
+  "repository": "https://github.com/charle-k/django-paynow-example",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}

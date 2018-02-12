@@ -1,0 +1,17 @@
+{% extends "paynow/base.html" %}
+
+{% block title %} Home{% endblock %}
+
+{% block content %}
+<h1 class="page-header">Profile - {{ user.username }}</h1>
+<h2 class="sub-header">About</h2>
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<tr><td>Username</td><td>{{ user.username }}</td></tr>
+<tr><td>First name</td><td>{{ user.first_name|capfirst }}</td></tr>
+<tr><td>Surname</td><td>{{ user.last_name|capfirst }}</td></tr>
+<table>
+</div>
+
+
+{% endblock %}

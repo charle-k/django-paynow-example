@@ -1,0 +1,38 @@
+{% extends "paynow/base.html" %}
+{% block title %}Unconfirmed Payments{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+<div class="col-sm-12">
+<h3 class="page-header">Unconfirmed Payments</h3>
+
+{% if payments %}
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<tr>
+<th>Date & Time</th><th>User</th><th>Cellphone Number</th><th>Amount</th>
+<th>Ref/Acc</th><th>Transaction</th>
+</tr>
+{% for payment in payments %}
+<tr class="danger">
+    <td>{{ payment.creation|date:"D d M Y" }} {{ payment.creation|time:"H:i:s" }}</td>
+    <td>{{ payment.user }}</td>
+    <td>{{ payment.cellphone }}</td>
+    <td>${{ payment.amount }}</td>
+    <td>{{ payment.additionalinfo }}</td>
+    <td>{{ payment.reference }}</td>
+</tr>
+  {% endfor %}
+<table>
+</div>
+
+{% else %}
+There are no payments
+{% endif %}
+
+
+</div>
+</div>
+{% endblock %}

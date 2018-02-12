@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="charlek" >
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Login - Payment System</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'paynow/css/bootstrap.min.css' %}" />
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{% static 'paynow/css/signin.css' %}" />
+
+
+  </head>
+
+  <body>
+
+    <div class="container">
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+	<p>Your username and password didn't match. Please try again.</p>
+	</div>
+{% endif %}
+        <h1 class="page-header">Payment System for Paynow Integration</h1>
+	<p>
+	
+      <form method="post" class="form-signin" action="{% url 'django.contrib.auth.views.login' %}">
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="{{ form.username.id_for_label }}" class="sr-only">Username</label>
+        <input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}"
+        class="form-control" placeholder="Username" required autofocus>
+        <label for="{{ form.password.id_for_label }}" class="sr-only">Password</label>
+        <input type="password" id="{{ form.username.id_for_label }}" class="form-control"
+         name="{{ form.password.html_name }}"  placeholder="Password" required>
+
+        <input type="hidden" name="next" value="{{ next }}" />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+       </form>
+	</p>
+    </div> <!-- /container -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'paynow/js/jquery.min.js' %}"></script>
+    <script src="{% static 'paynow/js/bootstrap.min.js' %}"></script>
+  </body>
+</html>

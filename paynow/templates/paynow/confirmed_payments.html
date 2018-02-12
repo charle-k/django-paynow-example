@@ -1,0 +1,39 @@
+{% extends "paynow/base.html" %}
+{% block title %}Confirmed Payments{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+<div class="col-sm-12">
+<h3 class="page-header">Confirmed Payments</h3>
+
+{% if payments %}
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<tr>
+<th>Date & Time</th><th>User</th><th>Cellphone Number</th><th>Amount</th>
+<th>Ref/Acc</th><th>Transaction</th><th>Confirmed At</th>
+</tr>
+{% for payment in payments %}
+<tr>
+    <td>{{ payment.creation|date:"D d M Y" }} {{ payment.creation|time:"H:i:s" }}</td>
+    <td>{{ payment.user }}</td>
+    <td>{{ payment.cellphone }}</td>
+    <td>${{ payment.amount }}</td>
+    <td>{{ payment.additionalinfo }}</td>
+    <td>{{ payment.reference }}</td>
+    <td>{{ payment.confirmed_at|date:"D d M Y" }} {{ payment.confirmed_at|time:"H:i:s" }}</td>
+</tr>
+  {% endfor %}
+<table>
+</div>
+
+{% else %}
+There are no payments
+{% endif %}
+
+
+</div>
+</div>
+{% endblock %}
