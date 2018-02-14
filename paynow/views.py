@@ -39,7 +39,10 @@ def my_profile(request):
 
 @login_required
 def paynow_payment(request):
-    """This is the functions that initiates the payment process"""
+    """
+    This is the functions that initiates the payment process. This is
+    where the magic starts
+    """
     if request.method == 'POST':
         form = MobilePaymentForm(request.POST)
         if form.is_valid():
@@ -96,7 +99,11 @@ def paynow_payment(request):
             else:
                 msg = 'Error in processing payment. Please try again'
                 messages.error(request, msg)
-    return redirect(reverse('index'))
+    else:
+        form = MobilePaymentForm()
+    # if not POST request or error in inputs return input form
+    return render(request, 'paynow/paynow_payment.html',
+                    {'form': form})
 
 
 def paynow_return(request, order_id):

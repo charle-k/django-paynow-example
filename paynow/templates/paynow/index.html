@@ -5,21 +5,11 @@
 {% block content %}
 <div class="row">
 <div class="col-sm-12">
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">New Payment Ecocash/Telecash</h3>
-  </div>
-  <div class="panel-body">
-<form action="{% url 'paynow:paynow_payment' %}" method="post">
-  {% csrf_token %}
-    <table>
-    {{ form.as_table }}
-    </table>
-    <br>
-    <input type="submit" value="Make Payment"/>
-</form>
-  </div>
-</div>
+<h1 class="page-header">Paynow Payments</h1>
+<a href="{% url 'paynow:paynow_payment' %}"
+    class="btn btn-warning btn-lg" role="button">Make a new Payment</a>
+
+
 <h3 >Today's Ecocash and Telecash Payments</h3>
 </div>
 </div>

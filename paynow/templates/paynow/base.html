@@ -47,7 +47,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <p>
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="{% url 'paynow:index' %}">Cashier Payments<span class="sr-only">(current)</span></a></li>
+            <li class="active"><a href="{% url 'paynow:index' %}">Payments Home<span class="sr-only">(current)</span></a></li>
+           <li><a href="{% url 'paynow:paynow_payment' %}">New Payment</a></li>
             <li><a href="{% url 'paynow:confirmed_payments' %}">Confirmed Payments</a></li>
             <li><a href="{% url 'paynow:unconfirmed_payments' %}">Unconfirmed Payments</a></li>
           </ul>
