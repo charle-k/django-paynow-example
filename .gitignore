@@ -7,3 +7,5 @@ staticfiles
 db.sqlite3
 *.log
 *.nja
+.idea
+local_settings.py

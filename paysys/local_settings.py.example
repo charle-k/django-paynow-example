@@ -1,0 +1,7 @@
+# Example of local setting used for testing purpose. rename it to local_settings.py
+DEBUG = True
+
+# Overide settings variables. You can set this when testing on your local machine
+PAYNOW_INTEGRATION_ID = ""
+PAYNOW_INTEGRATION_KEY = ""
+

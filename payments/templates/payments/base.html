@@ -8,15 +8,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Payment Processing System - Paynow Integration">
     <meta name="author" content="charlek" >
-    <link rel="icon" href="{% static 'paynow/css/dashboard.css' %}">
+    <link rel="icon" href="{% static 'payments/css/dashboard.css' %}">
 
     <title>{% block title %}{% endblock %} - Payment Dashboard - Paynow Integration</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'paynow/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'payments/css/bootstrap.min.css' %}" />
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="{% static 'paynow/css/dashboard.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'payments/css/dashboard.css' %}" />
 
 </head>
 
@@ -31,11 +31,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{% url 'paynow:index' %}">Payment System - Paynow</a>
+          <a class="navbar-brand" href="{% url 'payments:index' %}">Payment System - Paynow</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-           <li><a href="{% url 'paynow:my_profile' %}">{{ user.username }} ({{ user.email }})</a></li>
+           <li><a href="{% url 'payments:my_profile' %}">{{ user.username }} ({{ user.email }})</a></li>
            <li><a href="/logout/">Logout</a></li>
           </ul>
         </div>
@@ -47,10 +47,10 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <p>
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="{% url 'paynow:index' %}">Payments Home<span class="sr-only">(current)</span></a></li>
-           <li><a href="{% url 'paynow:paynow_payment' %}">New Payment</a></li>
-            <li><a href="{% url 'paynow:confirmed_payments' %}">Confirmed Payments</a></li>
-            <li><a href="{% url 'paynow:unconfirmed_payments' %}">Unconfirmed Payments</a></li>
+            <li class="active"><a href="{% url 'payments:index' %}">Payments Home<span class="sr-only">(current)</span></a></li>
+           <li><a href="{% url 'payments:paynow_payment' %}">New Payment</a></li>
+            <li><a href="{% url 'payments:confirmed_payments' %}">Confirmed Payments</a></li>
+            <li><a href="{ url 'payments:unconfirmed_payments' %}">Unconfirmed Payments</a></li>
           </ul>
           </p>
           {% block cashier_side_menu %}{% endblock %}
@@ -80,7 +80,7 @@
     </div>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="{% static 'paynow/js/jquery.min.js' %}"></script>
-    <script src="{% static 'paynow/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'payments/js/jquery.min.js' %}"></script>
+    <script src="{% static 'payments/js/bootstrap.min.js' %}"></script>
   </body>
 </html>

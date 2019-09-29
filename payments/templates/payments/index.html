@@ -1,4 +1,4 @@
-{% extends "paynow/base.html" %}
+{% extends "payments/base.html" %}
 
 {% block title %}Paynow Payments{% endblock %}
 
@@ -6,7 +6,7 @@
 <div class="row">
 <div class="col-sm-12">
 <h1 class="page-header">Paynow Payments</h1>
-<a href="{% url 'paynow:paynow_payment' %}"
+<a href="{% url 'payments:paynow_payment' %}"
     class="btn btn-warning btn-lg" role="button">Make a new Payment</a>
 
 
@@ -41,7 +41,7 @@
 
     {% if upayment.paid != True %}
     <br>
-    <a href="{% url 'paynow:paynow_return' upayment.reference %}"
+    <a href="{% url 'payments:paynow_return' upayment.reference %}"
     class="btn btn-primary" role="button">Check Payment Status</a>
     {% endif %}
     </div>

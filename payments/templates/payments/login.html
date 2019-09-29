@@ -10,10 +10,10 @@
     <meta name="author" content="charlek" >
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Login - Payment System</title>
+    <title>Login - Paynow Example Intergration</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'paynow/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'payments/css/bootstrap.min.css' %}" />
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="{% static 'paynow/css/signin.css' %}" />
@@ -32,14 +32,16 @@
         <h1 class="page-header">Payment System for Paynow Integration</h1>
 	<p>
 	
-      <form method="post" class="form-signin" action="{% url 'django.contrib.auth.views.login' %}">
+      <form method="post" class="form-signin" action="{% url 'login' %}">
         {% csrf_token %}
         <h2 class="form-signin-heading">Please sign in</h2>
+
         <label for="{{ form.username.id_for_label }}" class="sr-only">Username</label>
         <input type="text" id="{{ form.username.id_for_label }}" name="{{ form.username.html_name }}"
         class="form-control" placeholder="Username" required autofocus>
+
         <label for="{{ form.password.id_for_label }}" class="sr-only">Password</label>
-        <input type="password" id="{{ form.username.id_for_label }}" class="form-control"
+        <input type="password" id="{{ form.passwor.id_for_label }}" class="form-control"
          name="{{ form.password.html_name }}"  placeholder="Password" required>
 
         <input type="hidden" name="next" value="{{ next }}" />
