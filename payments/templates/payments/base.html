@@ -48,17 +48,16 @@
           <p>
           <ul class="nav nav-sidebar">
             <li class="active"><a href="{% url 'payments:index' %}">Payments Home<span class="sr-only">(current)</span></a></li>
-           <li><a href="{% url 'payments:paynow_payment' %}">New Payment</a></li>
+            <li><a href="{% url 'payments:paynow_payment' %}">New Paynow Payment - Example</a></li>
+            <li><a href="{% url 'payments:paynow_mobile_payment' %}">New Paynow Mobile Payment - Example</a></li>
             <li><a href="{% url 'payments:confirmed_payments' %}">Confirmed Payments</a></li>
-            <li><a href="{ url 'payments:unconfirmed_payments' %}">Unconfirmed Payments</a></li>
+            <li><a href="{% url 'payments:unconfirmed_payments' %}">Unconfirmed Payments</a></li>
           </ul>
           </p>
           {% block cashier_side_menu %}{% endblock %}
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-         <!-- <h1 class="page-header">Dashboard</h1>
-          <h2 class="sub-header">Section title</h2> -->
 
           {% if messages %}
           <div class="row">

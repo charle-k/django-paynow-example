@@ -12,8 +12,8 @@ class PaynowPayment(models.Model):
     details = models.CharField(max_length=500, blank=True)
 
     init_status = models.CharField(max_length=10, blank=True)
-    pollurl = models.CharField(max_length=500)
-    browserurl = models.CharField(max_length=500)
+    poll_url = models.CharField(max_length=500)
+    browser_url = models.CharField(max_length=500)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10)

@@ -33,11 +33,19 @@
   </div>
   <div class="panel-body">
 
-    Ref/Acc: {{ upayment.additionalinfo }}
+      Details: <strong>{{ upayment.details }}</strong>
     <br>
-    Time: {{ upayment.creation|date:"D d M Y" }} {{ upayment.creation|time:"H:i:s" }}
+    Cellphone: {{ upayment.cellphone }}
     <br>
-    Trans#: {{ upayment.reference }}
+    Email: {{ upayment.email }}
+    <br>
+    Time: {{ upayment.created|date:"D d M Y" }} {{ upayment.created|time:"H:i:s" }}
+    <br>
+    Reference: {{ upayment.reference }}
+     <br>
+    Paynow Reference: {{ upayment.paynow_reference }}
+    <br>
+    Paynow Status: {{ upayment.status }}
 
     {% if upayment.paid != True %}
     <br>
@@ -68,9 +76,11 @@
   <div class="panel-body">
     Ref:Acc {{ payment.additionalinfo }}
     <br>
-    Time {{ payment.creation|date:"D d M Y" }} {{ payment.creation|time:"H:i:s" }}
+    Time {{ payment.created|date:"D d M Y" }} {{ payment.created|time:"H:i:s" }}
     <br>
-    Trans#: {{ payment.reference }}
+    Reference: {{ payment.reference }}
+     <br>
+    Paynow Reference: {{ payment.paynow_reference }}
     {% if payment.paid != True %}
     <a href="{% url 'payments:paynow_return' payment.reference %}">Check Payment Status</a>
     <br>

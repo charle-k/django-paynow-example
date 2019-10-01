@@ -130,7 +130,7 @@ PAYNOW_INTEGRATION_ID = ''
 PAYNOW_INTEGRATION_KEY = ''
 
 try:
-  from pro.local_settings import *
+  from .local_settings import *
 except ImportError:
   pass
 

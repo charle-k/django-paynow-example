@@ -1,4 +1,4 @@
-{% extends "paynow/base.html" %}
+{% extends "payments/base.html" %}
 {% block title %}Confirmed Payments{% endblock %}
 
 
@@ -17,7 +17,7 @@
 </tr>
 {% for payment in payments %}
 <tr>
-    <td>{{ payment.creation|date:"D d M Y" }} {{ payment.creation|time:"H:i:s" }}</td>
+    <td>{{ payment.created|date:"D d M Y" }} {{ payment.created|time:"H:i:s" }}</td>
     <td>{{ payment.user }}</td>
     <td>{{ payment.cellphone }}</td>
     <td>${{ payment.amount }}</td>

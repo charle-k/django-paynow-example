@@ -1,6 +1,6 @@
 {% extends "payments/base.html" %}
 
-{% block title %}Make a payment{% endblock %}
+{% block title %}Make a new payment - example{% endblock %}
 
 {% block content %}
 
@@ -10,7 +10,7 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">New Payment Ecocash/Telecash</h3>
+    <h3 class="panel-title">Make New Payment - Example</h3>
   </div>
   <div class="panel-body">
 <form action="{% url 'payments:paynow_payment' %}" method="post">

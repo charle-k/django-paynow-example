@@ -1,4 +1,4 @@
-{% extends "paynow/base.html" %}
+{% extends "payments/base.html" %}
 {% block title %}Unconfirmed Payments{% endblock %}
 
 
@@ -12,17 +12,21 @@
 <div class="table-responsive">
 <table class="table table-bordered table-striped">
 <tr>
-<th>Date & Time</th><th>User</th><th>Cellphone Number</th><th>Amount</th>
-<th>Ref/Acc</th><th>Transaction</th>
+<th>Date & Time</th><th>User</th><th>Cellphone Number</th><th>Email</th><th>Amount</th>
+<th>Ref/Acc</th><th>Transaction</th><th>Paynow Reference</th><th>Status</th>
 </tr>
 {% for payment in payments %}
 <tr class="danger">
-    <td>{{ payment.creation|date:"D d M Y" }} {{ payment.creation|time:"H:i:s" }}</td>
+    <td>{{ payment.created|date:"D d M Y" }} - {{ payment.created|time:"H:i:s" }}</td>
     <td>{{ payment.user }}</td>
     <td>{{ payment.cellphone }}</td>
+    <td>{{ payment.email }}</td>
+
     <td>${{ payment.amount }}</td>
-    <td>{{ payment.additionalinfo }}</td>
+    <td>{{ payment.details }}</td>
     <td>{{ payment.reference }}</td>
+    <td>{{ payment.paynow_reference }}</td>
+    <td>{{ payment.status }}</td>
 </tr>
   {% endfor %}
 <table>
