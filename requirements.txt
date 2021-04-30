@@ -7,4 +7,4 @@ paynow==1.0.4
 pytz==2019.2
 requests==2.22.0
 sqlparse==0.3.0
-urllib3==1.25.6
+urllib3==1.25.8
